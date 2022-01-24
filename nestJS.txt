@@ -1,0 +1,25 @@
+nest JS Cli로 nest JS 시작하기
+1. npm i -g @nestjs/cli
+2. nest new project-name
+//nest 프로젝트 생성
+
+로직 순서
+localhost:3000(get) ->controller ->appService
+
+<다이어그램 자료 확인>
+https://app.diagrams.net/
+
+nest g module boards : 모듈 generate
+->
+CREATE src/boards/boards.module.ts (83 bytes)
+UPDATE src/app.module.ts (164 bytes)
+
+nest g controller boards --no-spec : 모듈의 컨트롤러 generate
+->
+CREATE src/boards/boards.controller.ts (101 bytes)
+UPDATE src/boards/boards.module.ts (174 bytes)
+
+nest g service boards --no-spec
+->
+CREATE src/boards/boards.service.ts (90 bytes)
+UPDATE src/boards/boards.module.ts (254 bytes)
