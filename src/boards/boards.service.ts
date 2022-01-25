@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Board, BoardStatus } from './board.model';
-import {v1 as uuid} from 'uuid';
+import { v1 as uuid} from 'uuid';
+import { CreateBoardDto } from './dto/create-board.dto';
  
 @Injectable()
 export class BoardsService {
@@ -10,10 +11,12 @@ export class BoardsService {
         return this.boards;
     }
 
-    createBoard(title:string, description:string) {
-        const board = {
+    createBoard(createBoardDto: CreateBoardDto) {
+        const {title, description} = createBoardDto;
+
+        const board : Board = {
             id :uuid(),  //id를 유니크한 아이디
-            title : title,  // 두 가지가 동일할 경우에는 아래처럼 하나만 적어줘도 가능
+            title, 
             description, 
             status : BoardStatus.PUBLIC
         }
