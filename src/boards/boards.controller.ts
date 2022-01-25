@@ -1,11 +1,22 @@
-import { Controller } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Board } from './board.model';
 import { BoardsService } from './boards.service';
 
 @Controller('boards')
 export class BoardsController {
-
     constructor(private boardsService: BoardsService) {}
 
-    //이런 식으로 사용 가능
-    //this.boardsService.getAllBoards();
+    @Get('/')
+    getAllBoards():Board[] {
+        return this.boardsService.getAllBoards();
+    }
+
+    @Post()
+    createBoard(
+        //express에서는 req.body
+        @Body('title') title :string,
+        @Body('description') description :string,
+        ) : Board {
+            return this.boardsService.createBoard(title, description);
+    }
 }
