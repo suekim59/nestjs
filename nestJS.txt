@@ -23,3 +23,9 @@ nest g service boards --no-spec
 ->
 CREATE src/boards/boards.service.ts (90 bytes)
 UPDATE src/boards/boards.module.ts (254 bytes)
+
+uuid 모듈 ( uniq id 생성)
+npm install uuid --save
+
+pipe 생성 (transformation & validation)
+npm install class-validator class-transformer --save
