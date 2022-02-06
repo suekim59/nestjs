@@ -29,3 +29,15 @@ npm install uuid --save
 
 pipe 생성 (transformation & validation)
 npm install class-validator class-transformer --save
+
+***local memory에 저장했으나, 이제 데이터베이스 사용!
+설치할 두 가지
+1. PostgresSQL
+2. pgAdmin
+
+
+typeORM을 사용하기 위해서 설치해야 하는 모듈들
+1. @nestjs/typeorm - NestJS에서 TypeOrm을 사용하기 위해 연동시켜주는 모듈
+2. typeorm - typeorm
+3. pg - Postgres 모듈
+=> npm install pg typeorm @nestjs/typeorm --save

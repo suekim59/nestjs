@@ -8,7 +8,6 @@ export class BoardStatusValidationPipe implements PipeTransform {
         BoardStatus.PUBLIC
     ]
     
-    
     transform(value: any) {
         value = value.toUpperCase();
         if(!this.isStatusValid(value)){
