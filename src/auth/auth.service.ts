@@ -21,6 +21,7 @@ export class AuthService {
 
     async signIn(authCredentialsDto: AuthCredentialsDto) : Promise<{accessToken: string}> {
         const { username, password} = authCredentialsDto;
+        //username에 앞 뒤 공백 제거
         const user = await this.userRepository.findOne({ username});
 
         if(user && (await bcrypt.compare(password, user.password))) {

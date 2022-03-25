@@ -77,3 +77,30 @@ passport-jwt : jwt 모듈
 npm install @nestjs/jwt @nestjs/passport passport passport-jwt --save
 
 @types/passport-jwt : passport-jwt 모듈을 위한 타입 정의 모듈
+
+- 유저와 게시물 데이터의 관계 형성
+관계 형성 위해 엔티티에 서로 간의 필드를 넣어줘야 한다.
+
+- 게시물 생성할 때 유저 정보 넣어주기
+
+- 원래 로그 넣는 것은 하나하나 개발하면서 사용
+
+- 설정 파일(Configuration)
+: runtime 도중에 바뀌는 것이 아닌 애플리케이션이 시작할 때 로드가 되어서
+그 값들을 정의하여 준다. 그리고 설정 파일은 여러 가지 파일 형식을 사용할 수 있음
+ex) XML, JSON, YAML, Environment Variables 같은 많은 형식
+
+- 환경 변수 : 비밀번호나 api key같은 정보
+npm install -g win-node-env
+npm install config --save
+
+- default.YAML 
+development.YAML
+production.YAML
+
+-jwt expiresIn 3600 -> 1시간
+
+-synchronize
+
+-jwt 
+secret -> auth module에서 정한 값
